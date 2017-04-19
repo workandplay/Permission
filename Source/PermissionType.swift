@@ -39,14 +39,9 @@ public enum PermissionType {
     #if PERMISSION_NOTIFICATIONS
     case notifications(UIUserNotificationSettings)
     #endif
-    
-    #if PERMISSION_MICROPHONE
+
     case microphone
-    #endif
-    
-    #if PERMISSION_CAMERA
     case camera
-    #endif
     
     #if PERMISSION_PHOTOS
     case photos
@@ -99,14 +94,10 @@ extension PermissionType: CustomStringConvertible {
         #if PERMISSION_NOTIFICATIONS
         if case .notifications = self { return "Notifications" }
         #endif
-        
-        #if PERMISSION_MICROPHONE
+
         if case .microphone = self { return "Microphone" }
-        #endif
-        
-        #if PERMISSION_CAMERA
+
         if case .camera = self { return "Camera" }
-        #endif
         
         #if PERMISSION_PHOTOS
         if case .photos = self { return "Photos" }

@@ -43,16 +43,12 @@ open class Permission: NSObject {
     /// The permission to access the user's location when the app is in use.
     open static let locationWhenInUse = Permission(type: .locationWhenInUse)
     #endif
-    
-    #if PERMISSION_MICROPHONE
+
     /// The permission to access the microphone.
     open static let microphone = Permission(type: .microphone)
-    #endif
-    
-    #if PERMISSION_CAMERA
+
     /// The permission to access the camera.
     open static let camera = Permission(type: .camera)
-    #endif
     
     #if PERMISSION_PHOTOS
     /// The permission to access the user's photos.
@@ -153,15 +149,11 @@ open class Permission: NSObject {
         #if PERMISSION_NOTIFICATIONS
         if case .notifications = type { return statusNotifications }
         #endif
-        
-        #if PERMISSION_MICROPHONE
+
         if case .microphone = type { return statusMicrophone }
-        #endif
-        
-        #if PERMISSION_CAMERA
+
         if case .camera = type { return statusCamera }
-        #endif
-        
+
         #if PERMISSION_PHOTOS
         if case .photos = type { return statusPhotos }
         #endif
@@ -291,20 +283,16 @@ open class Permission: NSObject {
             return
         }
         #endif
-        
-        #if PERMISSION_MICROPHONE
+
         if case .microphone = type {
             requestMicrophone(callback)
             return
         }
-        #endif
-        
-        #if PERMISSION_CAMERA
+
         if case .camera = type {
             requestCamera(callback)
             return
         }
-        #endif
         
         #if PERMISSION_PHOTOS
         if case .photos = type {

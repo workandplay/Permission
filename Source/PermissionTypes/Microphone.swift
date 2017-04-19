@@ -22,7 +22,6 @@
 // SOFTWARE.
 //
 
-#if PERMISSION_MICROPHONE
 import AVFoundation
 
 internal extension Permission {
@@ -42,4 +41,3 @@ internal extension Permission {
         }
     }
 }
-#endif
